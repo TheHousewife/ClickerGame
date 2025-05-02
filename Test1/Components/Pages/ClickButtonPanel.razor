@@ -1,0 +1,36 @@
+@using Test1.Services
+@inject ClickerService Clicker
+
+<div class="d-flex flex-column align-items-center">
+    <button class="btn btn-primary button" @onclick="Click">Click Me!</button>
+
+    <div class="mt-2 text-center">
+        <p>Click Strength: @Clicker.ClickStrength</p>
+        <p>Click Multiplier: @Clicker.ClickMultiplier</p>
+        <button class="@(Clicker.CanAffordClickUpgrade ? (Clicker.IsClickUpgradeNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning") : "btn btn-secondary")"
+        @onclick="UpgradeClick">
+            Upgrade Click (Lvl @Clicker.ClickStrength)
+        </button>
+
+        <p>Upgrade Cost: @Math.Round(Clicker.ClickUpgradeCost)</p>
+    </div>
+    
+</div>
+
+@code {
+    [Parameter] public EventCallback OnUpdated { get; set; }
+
+    private void Click()
+    {
+        Clicker.Click();
+        OnUpdated.InvokeAsync();
+    }
+
+    private void UpgradeClick()
+    {
+        if (Clicker.TryUpgradeClick())
+        {
+            OnUpdated.InvokeAsync();
+        }
+    }
+}

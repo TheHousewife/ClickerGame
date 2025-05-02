@@ -1,0 +1,87 @@
+﻿@page "/Test1"
+@* @using Test1.Data *@
+@using Test1.Services
+@rendermode InteractiveServer
+
+<PageTitle>Test1</PageTitle>
+
+<h1 class="text-center">Clicker Game</h1>
+<h2 class="text-center h2">Current player: @_username</h2>
+
+<div class="mb-2 d-flex flex-column justify-content-center align-items-center">
+    <input type="text" class="form-control rounded-pill shadow-sm w-25" @bind="_username" placeholder="Enter Username" />
+    <button class="btn btn-warning text-uppercase fw-bold mt-2 rounded-pill px-4 w-25" @onclick="SwitchAccount">Load Account</button>
+    <p class="text-danger">@_errorMessage</p>
+</div>
+
+<div class="shadow-lg bg-dark-subtle bg-gradient border border-dark rounded-3 card h-100 p-4">
+    <p role="status" class="text-center h1">
+        Clicks: @Clicker?.CurrentCount
+    </p>
+    <div class="container d-flex flex-row justify-content-between">
+        <div class="d-flex flex-column align-items-center">
+            <ClickButtonPanel OnUpdated="HandleGameUpdated"/>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <AutoClickerPanel OnUpdated="HandleGameUpdated"/>
+        </div>
+    </div>
+</div>
+
+<div class="mb-2 d-flex flex-column justify-content-center align-items-center">
+    <button class="save-button btn btn-success mt-3 rounded-pill w-25 text-uppercase" @onclick="SaveGame">Save Progress</button>
+</div>
+
+@code {
+    [Inject] private ClickerService? Clicker { get; set; }
+    [Inject] private GameManager? GameManager { get; set; }
+    private string _username = "";
+    string _errorMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Clicker == null || GameManager == null)
+            throw new InvalidOperationException("ClickerService or GameManager not injected!");
+
+        Clicker.OnClickUpdated += HandleGameUpdated;
+        GameManager.OnGameUpdated += HandleGameUpdated;
+        GameManager.StartAutoClickers();
+    }
+    
+    private void SaveGame()
+    {
+        Clicker?.SaveProgress();
+    }
+
+    private void HandleGameUpdated()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    private async void SwitchAccount()
+    {
+        if (_username == "")
+        {
+            _errorMessage = "You must enter a valid username.";
+            await Task.Delay(1500);
+            _errorMessage = "";
+            HandleGameUpdated();
+            return;
+        }
+        
+        Clicker?.LoadPlayer(_username);
+    }
+
+    public void Dispose()
+    {
+        if (GameManager != null)
+        {
+            GameManager.OnGameUpdated -= HandleGameUpdated;
+        }
+
+        if (Clicker != null)
+        {
+            Clicker.OnClickUpdated -= HandleGameUpdated;
+        }
+    }
+}

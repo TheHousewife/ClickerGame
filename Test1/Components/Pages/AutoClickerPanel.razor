@@ -1,0 +1,40 @@
+@using Test1.Services
+@inject ClickerService Clicker
+
+<div class="text-center">
+    <button class="@(Clicker.CanAffordAutoClicker ? "btn btn-success" : "btn btn-danger") button mt-2" @onclick="AutoClicker">
+        +1 AutoClicker
+    </button>
+    <div class="mt-2">
+        <p class="h5">Cost: @Math.Round(Clicker.AutoClickerPrice)</p>
+        <p>Amount owned: @Clicker.AutoClickerAmount</p>
+    </div>
+</div>
+
+@code {
+    [Parameter] public EventCallback OnUpdated { get; set; }
+
+    private void AutoClicker()
+    {
+        if (Clicker.TryPurchaseAutoClicker())
+        {
+            OnUpdated.InvokeAsync();
+        }
+    }
+}
+
+<button class="@(Clicker.CanAffordAutoClickerUpgrade ? (Clicker.IsAutoClickerNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning") : "btn btn-secondary")"
+        @onclick="UpgradeClicker">
+    Upgrade AutoClicker (Lvl @Clicker.AutoClickerLevel)
+</button>
+<p>Upgrade Cost: @Math.Round(Clicker.AutoClickerUpgradeCost)</p>
+
+@code {
+    private void UpgradeClicker()
+    {
+        if (Clicker.TryUpgradeAutoClicker())
+        {
+            OnUpdated.InvokeAsync();
+        }
+    }
+}

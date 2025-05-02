@@ -5,6 +5,7 @@ public class GameManager
     private readonly ClickerService _clickerService;
     private bool _isRunning = true;
     private Task? _autoClickerTask;
+    private Task? _superClickerTask;
 
     public event Action? OnGameUpdated;
 
@@ -32,4 +33,25 @@ public class GameManager
             }
         });
     }
+    
+    public void StartSuperClickers()
+    {
+        if (_superClickerTask != null) return;
+
+        _superClickerTask = Task.Run(async () =>
+        {
+            while (_isRunning)
+            {
+                if (_clickerService.SuperClickerAmount > 0)
+                {
+                    int powerBoost = _clickerService.SuperClickerStrength;
+                    _clickerService.CurrentCount += (_clickerService.SuperClickerAmount * powerBoost);
+                
+                    OnGameUpdated?.Invoke();
+                }
+                await Task.Delay(150 / _clickerService.SuperClickerLevel);
+            }
+        });
+    }
+    
 }

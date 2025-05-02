@@ -32,7 +32,12 @@ public class ClickerService
                 ClickMultiplier = 1,
                 AutoClickerPrice = 10,
                 AutoClickerUpgradeCost = 100,
-                ClickUpgradeCost = 50
+                ClickUpgradeCost = 50,
+                SuperClickerAmount = 0,
+                SuperClickerLevel = 1,
+                SuperClickerStrength = 1,
+                SuperClickerPrice = 100,
+                SuperClickerUpgradeCost = 1000,
             };
 
             _dbContext.Players.Add(_player);
@@ -54,6 +59,12 @@ public class ClickerService
     public int AutoClickerLevel => _player.AutoClickerLevel;
     public double AutoClickerUpgradeCost => _player.AutoClickerUpgradeCost;
 
+    public int SuperClickerAmount => _player.SuperClickerAmount;
+    public double SuperClickerPrice => _player.SuperClickerPrice;
+    public int SuperClickerStrength => _player.SuperClickerStrength;
+    public int SuperClickerLevel => _player.SuperClickerLevel;
+    public double SuperClickerUpgradeCost => _player.SuperClickerUpgradeCost;
+
     public int ClickStrength => _player.ClickStrength;
     public int ClickMultiplier => _player.ClickMultiplier;
     public int ClickUpgradeLevel => _player.ClickStrength;
@@ -62,9 +73,12 @@ public class ClickerService
     public bool CanAffordAutoClicker => CurrentCount >= AutoClickerPrice;
     public bool CanAffordAutoClickerUpgrade => CurrentCount >= AutoClickerUpgradeCost;
     public bool CanAffordClickUpgrade => CurrentCount >= ClickUpgradeCost;
+    public bool CanAffordSuperClicker => CurrentCount >= SuperClickerPrice;
+    public bool CanAffordSuperClickerUpgrade => CurrentCount >= SuperClickerUpgradeCost;
     
     public bool IsAutoClickerNearMilestone => (_player.AutoClickerLevel + 1) % 10 == 0;
     public bool IsClickUpgradeNearMilestone => (_player.ClickStrength + 1) % 10 == 0;
+    public bool IsSuperClickerNearMilestone => (_player.SuperClickerLevel + 1) % 10 == 0;
 
     public event Action? OnClickUpdated;
     public event Action? OnMilestoneReached;
@@ -123,6 +137,37 @@ public class ClickerService
         SaveProgress();
         return true;
     }
+
+    public bool TryPurchaseSuperClicker()
+    {
+        if (!CanAffordSuperClicker) return false;
+
+        _player.SuperClickerAmount++;
+        CurrentCount -= _player.SuperClickerPrice;
+        _player.SuperClickerPrice = Math.Round(_player.SuperClickerPrice * 1.30);
+        
+        OnClickUpdated?.Invoke();
+        SaveProgress();
+        return true;
+    }
+
+    public bool TryUpgradeSuperClicker()
+    {
+        if (!CanAffordSuperClickerUpgrade) return false;
+        _player.SuperClickerLevel++;
+        CurrentCount -= _player.SuperClickerUpgradeCost;
+        _player.SuperClickerUpgradeCost = Math.Round(_player.SuperClickerUpgradeCost * 1.55);
+        if (_player.SuperClickerLevel % 10 == 0)
+        {
+            _player.SuperClickerStrength++;
+            OnMilestoneReached?.Invoke();
+        }
+        SaveProgress();
+        return true;
+    }
+
+
+
 
     public void SaveProgress()
     {

@@ -31,6 +31,9 @@
         <div class="d-flex flex-column align-items-center">
             <AutoClickerPanel OnUpdated="HandleGameUpdated"/>
         </div>
+        <div class="d-flex flex-column align-items-center">
+            <SuperClickerPanel OnUpdated="HandleGameUpdated"/>
+        </div>
     </div>
 </div>
 
@@ -53,6 +56,7 @@
         Clicker.OnClickUpdated += HandleGameUpdated;
         GameManager.OnGameUpdated += HandleGameUpdated;
         GameManager.StartAutoClickers();
+        GameManager.StartSuperClickers();
     }
     
     private void SaveGame()

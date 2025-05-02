@@ -1,0 +1,40 @@
+@using Test1.Services
+@inject ClickerService Clicker
+
+<div class="text-center">
+    <button class="@(Clicker.CanAffordSuperClicker ? "btn btn-success" : "btn btn-danger") button mt-2" @onclick="SuperClicker">
+        +1 SuperClicker
+    </button>
+    <div class="mt-2">
+        <p class="h5">Cost: @Math.Round(Clicker.SuperClickerPrice)</p>
+        <p>Amount owned: @Clicker.SuperClickerAmount</p>
+    </div>
+</div>
+
+@code {
+    [Parameter] public EventCallback OnUpdated { get; set; }
+
+    private void SuperClicker()
+    {
+        if (Clicker.TryPurchaseSuperClicker())
+        {
+            OnUpdated.InvokeAsync();
+        }
+    }
+}
+
+<button class="@(Clicker.CanAffordSuperClickerUpgrade ? (Clicker.IsSuperClickerNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning") : "btn btn-secondary")"
+        @onclick="UpgradeClicker">
+    Upgrade SuperClicker (Lvl @Clicker.SuperClickerLevel)
+</button>
+<p>Upgrade Cost: @Math.Round(Clicker.SuperClickerUpgradeCost)</p>
+
+@code {
+    private void UpgradeClicker()
+    {
+        if (Clicker.TryUpgradeSuperClicker())
+        {
+            OnUpdated.InvokeAsync();
+        }
+    }
+}

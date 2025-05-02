@@ -49,6 +49,21 @@ namespace Test1.Migrations
                     b.Property<double>("CurrentCount")
                         .HasColumnType("REAL");
 
+                    b.Property<int>("SuperClickerAmount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SuperClickerLevel")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("SuperClickerPrice")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("SuperClickerStrength")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("SuperClickerUpgradeCost")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("TEXT");

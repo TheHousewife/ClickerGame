@@ -15,4 +15,9 @@ public class PlayerData
     public double AutoClickerPrice { get; set; } = 10;
     public double AutoClickerUpgradeCost { get; set; } = 100;
     public double ClickUpgradeCost { get; set; } = 50;
+    public int SuperClickerAmount { get; set; }
+    public int SuperClickerLevel { get; set; }
+    public int SuperClickerStrength { get; set; }
+    public double SuperClickerPrice { get; set; } = 100;
+    public double SuperClickerUpgradeCost { get; set; } = 1000;
 }

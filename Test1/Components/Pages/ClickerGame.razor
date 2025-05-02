@@ -1,15 +1,21 @@
 ﻿@page "/Test1"
-@* @using Test1.Data *@
+@using Test1.Data
 @using Test1.Services
 @rendermode InteractiveServer
 
 <PageTitle>Test1</PageTitle>
 
 <h1 class="text-center">Clicker Game</h1>
-<h2 class="text-center h2">Current player: @_username</h2>
+<h2 class="text-center h2">Current player: @_currentPlayer</h2>
 
 <div class="mb-2 d-flex flex-column justify-content-center align-items-center">
-    <input type="text" class="form-control rounded-pill shadow-sm w-25" @bind="_username" placeholder="Enter Username" />
+    <input type="text" 
+           class="form-control rounded-pill shadow-sm w-25" 
+           value="@_inputUsername"
+           @onchange="ValidateUsername"
+           @oninput="ValidateUsername"
+           maxlength="20"
+           placeholder="Enter Username (3-20 characters)" />
     <button class="btn btn-warning text-uppercase fw-bold mt-2 rounded-pill px-4 w-25" @onclick="SwitchAccount">Load Account</button>
     <p class="text-danger">@_errorMessage</p>
 </div>
@@ -35,7 +41,8 @@
 @code {
     [Inject] private ClickerService? Clicker { get; set; }
     [Inject] private GameManager? GameManager { get; set; }
-    private string _username = "";
+    private string _inputUsername = "";
+    private string _currentPlayer = "";
     string _errorMessage = "";
 
     protected override async Task OnInitializedAsync()
@@ -58,18 +65,43 @@
         InvokeAsync(StateHasChanged);
     }
 
-    private async void SwitchAccount()
+    private void ValidateUsername(ChangeEventArgs e)
     {
-        if (_username == "")
+        string? value = e.Value?.ToString();
+        if (value != null)
         {
-            _errorMessage = "You must enter a valid username.";
-            await Task.Delay(1500);
+            _inputUsername = value;
+        }
+        
+        if (string.IsNullOrWhiteSpace(_inputUsername))
+        {
+            _errorMessage = "You must enter a username.";
+        }
+        else if (_inputUsername.Length < 3)
+        {
+            _errorMessage = "Username must be at least 3 characters long.";
+        }
+        else if (_inputUsername.Length > 20)
+        {
+            _errorMessage = "Username cannot be longer than 20 characters.";
+        }
+        else
+        {
             _errorMessage = "";
-            HandleGameUpdated();
+        }
+        
+        HandleGameUpdated();
+    }
+
+    private void SwitchAccount()
+    {
+        if (string.IsNullOrWhiteSpace(_inputUsername) || _inputUsername.Length < 3 || _inputUsername.Length > 20)
+        {
             return;
         }
         
-        Clicker?.LoadPlayer(_username);
+        _currentPlayer = _inputUsername;
+        Clicker?.LoadPlayer(_inputUsername);
     }
 
     public void Dispose()

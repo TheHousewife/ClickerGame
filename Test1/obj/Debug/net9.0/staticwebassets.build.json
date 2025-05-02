@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O+2twFPoUabY4cDE0du/4Scg1Zm8e8JVjThgRbk2qfY=",
+  "Hash": "lfiSHjaKSKTXK2o29r91cRDsDPcjzCsJx7oQu7AHGb0=",
   "Source": "Test1",
   "BasePath": "_content/Test1",
   "Mode": "Default",
@@ -1382,12 +1382,12 @@
       "OriginalItemSpec": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-e51zu6mfaj.gz",
+      "Identity": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-1rurjitn8h.gz",
       "SourceId": "Test1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Test1",
-      "RelativePath": "app#[.{fingerprint=e51zu6mfaj}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=1rurjitn8h}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1396,8 +1396,8 @@
       "RelatedAsset": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "7ino1cbh7i",
-      "Integrity": "/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44=",
+      "Fingerprint": "ip7pycc2oz",
+      "Integrity": "RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\app.css"
@@ -3685,8 +3685,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "e51zu6mfaj",
-      "Integrity": "ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg=",
+      "Fingerprint": "1rurjitn8h",
+      "Integrity": "bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -4639,13 +4639,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "app.css",
-      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-e51zu6mfaj.gz",
+      "Route": "app.1rurjitn8h.css",
+      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-1rurjitn8h.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000545256270"
+          "Quality": "0.000544959128"
         }
       ],
       "ResponseHeaders": [
@@ -4655,19 +4655,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1833"
+          "Value": "1834"
         },
         {
           "Name": "ETag",
-          "Value": "\"/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44=\""
+          "Value": "\"RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -4683,18 +4683,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg=\""
+          "Value": "W/\"bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "1rurjitn8h"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg="
+          "Value": "sha256-bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90="
         }
       ]
     },
     {
-      "Route": "app.css",
+      "Route": "app.1rurjitn8h.css",
       "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4704,7 +4712,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3506"
+          "Value": "3505"
         },
         {
           "Name": "Content-Type",
@@ -4712,121 +4720,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg=\""
+          "Value": "\"bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg="
-        }
-      ]
-    },
-    {
-      "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-e51zu6mfaj.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1833"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44="
-        }
-      ]
-    },
-    {
-      "Route": "app.e51zu6mfaj.css",
-      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-e51zu6mfaj.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000545256270"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1833"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "e51zu6mfaj"
+          "Value": "1rurjitn8h"
         },
         {
           "Name": "label",
@@ -4834,13 +4742,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg="
+          "Value": "sha256-bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90="
         }
       ]
     },
     {
-      "Route": "app.e51zu6mfaj.css",
-      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\app.css",
+      "Route": "app.1rurjitn8h.css.gz",
+      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-1rurjitn8h.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4849,7 +4757,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3506"
+          "Value": "1834"
         },
         {
           "Name": "Content-Type",
@@ -4857,56 +4765,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg=\""
+          "Value": "\"RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e51zu6mfaj"
-        },
-        {
-          "Name": "label",
-          "Value": "app.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ksaAG1lNAFtxFyFCEietpcV4so6NtyofcGl+GgELJXg="
-        }
-      ]
-    },
-    {
-      "Route": "app.e51zu6mfaj.css.gz",
-      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-e51zu6mfaj.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1833"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 08:30:00 GMT"
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4924,7 +4787,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "e51zu6mfaj"
+          "Value": "1rurjitn8h"
         },
         {
           "Name": "label",
@@ -4932,7 +4795,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/80RmhMr1TV6Km9LDOowDWJ87Pj+yHwMTSFPvOmiq44="
+          "Value": "sha256-RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-1rurjitn8h.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000544959128"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1834"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bd9igagDzDB4GS0j2DxdayUBpBEG74KFzL62qCa1D90="
+        }
+      ]
+    },
+    {
+      "Route": "app.css.gz",
+      "AssetFile": "C:\\Users\\mattis.ericsson-berg\\RiderProjects\\Test1\\Test1\\obj\\Debug\\net9.0\\compressed\\0yx04l1oiu-1rurjitn8h.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1834"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 08:31:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RkW+oruGsi41ZqGG8vzmiBlSwF+hLG0uinUD7vIcrvw="
         }
       ]
     },

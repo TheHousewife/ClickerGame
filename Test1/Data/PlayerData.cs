@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Test1.Data;
 
 public class PlayerData

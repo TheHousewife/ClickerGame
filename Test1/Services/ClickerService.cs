@@ -67,7 +67,6 @@ public class ClickerService
 
     public int ClickStrength => _player.ClickStrength;
     public int ClickMultiplier => _player.ClickMultiplier;
-    public int ClickUpgradeLevel => _player.ClickStrength;
     public double ClickUpgradeCost => _player.ClickUpgradeCost;
 
     public bool CanAffordAutoClicker => CurrentCount >= AutoClickerPrice;
@@ -99,7 +98,7 @@ public class ClickerService
 
         if (_player.ClickStrength % 10 == 0)
         {
-            _player.ClickMultiplier++;
+            _player.ClickMultiplier += 10;
             OnMilestoneReached?.Invoke();
         }
 

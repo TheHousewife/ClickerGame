@@ -306,4 +306,4 @@ C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\bin\Debug\net9.0\runtime
 C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\obj\Debug\net9.0\Test1.sourcelink.json
-C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\obj\Debug\net9.0\compressed\0yx04l1oiu-1rurjitn8h.gz
+C:\Users\mattis.ericsson-berg\RiderProjects\Test1\Test1\obj\Debug\net9.0\compressed\0yx04l1oiu-d4qfuinvmx.gz

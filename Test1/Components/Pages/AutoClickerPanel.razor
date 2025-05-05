@@ -23,7 +23,7 @@
     }
 }
 
-<button class="@(Clicker.CanAffordAutoClickerUpgrade ? (Clicker.IsAutoClickerNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning") : "btn btn-secondary")"
+<button class="@(Clicker.CanAffordAutoClickerUpgrade ? (Clicker.IsAutoClickerNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning rounded-pill") : "btn btn-secondary rounded-pill")"
         @onclick="UpgradeClicker">
     Upgrade AutoClicker (Lvl @Clicker.AutoClickerLevel)
 </button>

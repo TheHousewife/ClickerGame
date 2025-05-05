@@ -10,31 +10,39 @@
 
 <div class="mb-2 d-flex flex-column justify-content-center align-items-center">
     <input type="text" 
-           class="form-control rounded-pill shadow-sm w-25" 
-           value="@_inputUsername"
+           class="form-control rounded-pill shadow-sm w-25 load-input text-uppercase" 
+           value="@_inputUsername.ToUpper()"
            @onchange="ValidateUsername"
            @oninput="ValidateUsername"
            maxlength="20"
            placeholder="Enter Username (3-20 characters)" />
-    <button class="btn btn-warning text-uppercase fw-bold mt-2 rounded-pill px-4 w-25" @onclick="SwitchAccount">Load Account</button>
+    <button class="btn btn-warning text-uppercase fw-bold mt-2 rounded-pill px-4 w-25 load-button" @onclick="SwitchAccount">Load Account</button>
     <p class="text-danger">@_errorMessage</p>
 </div>
 
-<div class="shadow-lg bg-dark-subtle bg-gradient border border-dark rounded-3 card h-100 p-4">
-    <p role="status" class="text-center h1">
-        Clicks: @Clicker?.CurrentCount
-    </p>
-    <div class="container d-flex flex-row justify-content-between">
+<div class="shadow-lg bg-dark-subtle bg-gradient rounded-3 card h-100 p-4">
+    <div class="bg-light w-25 rounded-pill shadow-sm mx-auto p-3 mb-3">
+        <p role="status" class="text-center h1">
+            Clicks: @Clicker?.CurrentCount
+        </p>
+    </div>
+    
+    <div class="container d-flex flex-column justify-content-between rounded shadow-lg p-3 mb-3 bg-light">
         <div class="d-flex flex-column align-items-center">
             <ClickButtonPanel OnUpdated="HandleGameUpdated"/>
         </div>
-        <div class="d-flex flex-column align-items-center">
-            <AutoClickerPanel OnUpdated="HandleGameUpdated"/>
+        
+        <div class="d-flex align-content-start justify-content-evenly flex-wrap">
+            <div class="d-flex flex-column align-items-center">
+                <AutoClickerPanel OnUpdated="HandleGameUpdated"/>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <SuperClickerPanel OnUpdated="HandleGameUpdated"/>
+            </div>
         </div>
-        <div class="d-flex flex-column align-items-center">
-            <SuperClickerPanel OnUpdated="HandleGameUpdated"/>
-        </div>
+        
     </div>
+    
 </div>
 
 <div class="mb-2 d-flex flex-column justify-content-center align-items-center">

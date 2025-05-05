@@ -7,7 +7,7 @@
     <div class="mt-2 text-center">
         <p>Click Strength: @Clicker.ClickStrength</p>
         <p>Click Multiplier: @Clicker.ClickMultiplier</p>
-        <button class="@(Clicker.CanAffordClickUpgrade ? (Clicker.IsClickUpgradeNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning") : "btn btn-secondary")"
+        <button class="@(Clicker.CanAffordClickUpgrade ? (Clicker.IsClickUpgradeNearMilestone ? "btn btn-warning glow-effect" : "btn btn-warning rounded-pill") : "btn btn-secondary rounded-pill")"
         @onclick="UpgradeClick">
             Upgrade Click (Lvl @Clicker.ClickStrength)
         </button>

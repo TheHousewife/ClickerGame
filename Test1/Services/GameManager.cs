@@ -49,7 +49,7 @@ public class GameManager
                 
                     OnGameUpdated?.Invoke();
                 }
-                await Task.Delay(150 / _clickerService.SuperClickerLevel);
+                await Task.Delay(250 / _clickerService.SuperClickerLevel);
             }
         });
     }

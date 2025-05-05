@@ -13,14 +13,25 @@ a, .btn-link {
     height: 100px;
 }
 
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
 
-.save-button{
-    height: 60px;
+.btn:hover {
+    opacity: 0.7;
+    box-shadow: 0 0 2px 1px #656565;
+}
+
+.btn:active{
+    opacity: 0.9;
+    box-shadow: 0 0 2px 1px #656565;
+}
+
+.save-button, .load-button, .load-input{
+    height: 50px;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {

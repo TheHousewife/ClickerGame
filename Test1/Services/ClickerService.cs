@@ -50,7 +50,7 @@ public class ClickerService
     public double CurrentCount 
     { 
         get => _player.CurrentCount;
-        set { _player.CurrentCount = value; }
+        set => _player.CurrentCount = value;
     }
 
     public int AutoClickerAmount => _player.AutoClickerAmount;

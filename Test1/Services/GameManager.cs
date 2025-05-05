@@ -1,4 +1,4 @@
-using Test1.Services;
+namespace Test1.Services;
 
 public class GameManager
 {
